@@ -61,6 +61,7 @@ public class SudoCube : MonoBehaviour, IPointerClickHandler
             _unkCanvas.enabled = !showValue;
             _sudoValueCanvas.enabled = showValue;
             _sudoValueText.text = Mathf.Abs(_sudoCellValue).ToString();
+            _sudoValueText.enabled = showValue;
         }
         get
         {
