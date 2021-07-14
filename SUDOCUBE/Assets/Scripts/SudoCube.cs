@@ -8,11 +8,17 @@ using UnityEngine.EventSystems;
 
 public class SudoCube : MonoBehaviour, IPointerClickHandler
 {
-    int _sudoCellValue;
+    public int ID { get; private set; }
+    int _SudoCubeValue;
     [SerializeField] Canvas _sudoValueCanvas;
     [SerializeField] Canvas _unkCanvas;
     [SerializeField] TMP_Text _sudoValueText;
     Camera _mainCamera;
+    public List<int> Marks;
+    Color32 _red = new Color32(255, 0, 0, 255);
+    Color32 _black = new Color32(0, 0, 0, 255);
+    public cCoords _coords;
+    public cNeighbors NEIGHBORS { get; set; }
 
     private void Awake()
     {
@@ -51,21 +57,37 @@ public class SudoCube : MonoBehaviour, IPointerClickHandler
     }
     #endregion
 
-    public int SudoCellValue
+    internal void RemoveMark(int mark)
+    {
+
+        foreach (unkButton btn in _unkCanvas.GetComponentsInChildren<unkButton>())
+        {
+            if (btn.name.Contains(mark.ToString()))
+            {
+                // clear this mark from this unkButton.
+                Marks.Remove(mark);
+                TMP_Text text = btn.GetComponentInChildren<TMP_Text>();
+                text.color = _black;
+                text.fontStyle = FontStyles.Normal;
+            }
+        }
+    }
+
+    public int SudoCubeValue
     {
         set
         {
-            _sudoCellValue = value;
+            _SudoCubeValue = value;
 
-            bool showValue = _sudoCellValue > 0;
+            bool showValue = _SudoCubeValue > 0;
             _unkCanvas.enabled = !showValue;
             _sudoValueCanvas.enabled = showValue;
-            _sudoValueText.text = Mathf.Abs(_sudoCellValue).ToString();
+            _sudoValueText.text = Mathf.Abs(_SudoCubeValue).ToString();
             _sudoValueText.enabled = showValue;
         }
         get
         {
-            return _sudoCellValue;
+            return _SudoCubeValue;
         }
     }
 
@@ -75,7 +97,43 @@ public class SudoCube : MonoBehaviour, IPointerClickHandler
         transform.LookAt(_mainCamera.transform);
     }
 
-    
-    
+    public cCoords COORDS
+    {
+        get { return _coords; }
+        set
+        {
+            _coords = value;
+            // generate unique ID for SudoCell.
+            ID = _coords.LAYER * 100 + _coords.ROW * 10 + _coords.COL;
+        }
+    }
 
+    internal void RemoveMarks()
+    {
+        for (int i = 1; i <= g.PSIZE; i++)
+        {
+            RemoveMark(i);
+        }
+    }
+
+    internal void AddMark(int mark)
+    {
+        // TODO -- COLOR MARKED BUTTON
+        if (!Marks.Contains(mark))
+        {
+            Marks.Add(mark);
+            foreach (unkButton button in _unkCanvas.GetComponentsInChildren<unkButton>())
+            {
+                {
+                    if (button.name.Contains(mark.ToString()))
+                    {
+                        TMP_Text text = button.GetComponentInChildren<TMP_Text>();
+                        text.color = _red;
+                        text.fontStyle = FontStyles.Bold;
+                    }
+
+                }
+            }
+        }
+    }
 }

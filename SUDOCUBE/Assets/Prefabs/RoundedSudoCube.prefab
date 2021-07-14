@@ -2569,7 +2569,7 @@ GameObject:
   - component: {fileID: 5161295867818357584}
   - component: {fileID: 5791926672586682322}
   m_Layer: 0
-  m_Name: SudoCube
+  m_Name: RoundedSudoCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

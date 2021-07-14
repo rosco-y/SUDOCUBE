@@ -40,11 +40,11 @@ public class unkButton : MonoBehaviour, IPointerClickHandler
 
     private void leftClick()
     {
-        //  check if _buttoNo is the SudoCell's given
+        //  check if _buttoNo is the SudoCube's given
         SudoCube parent = GetComponentInParent<SudoCube>();
-        if (_buttonNo == Mathf.Abs( parent.SudoCellValue))
+        if (_buttonNo == Mathf.Abs( parent.SudoCubeValue))
         {
-            parent.SudoCellValue = _buttonNo;
+            parent.SudoCubeValue = _buttonNo;
         }
         else
         {
