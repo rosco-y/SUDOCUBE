@@ -15,10 +15,12 @@ public class unkButton : MonoBehaviour, IPointerClickHandler
     [SerializeField] SudoGuessCanvasScript _sudoGuessCanvasScript;
 
     int _buttonNo;
+    int _id;
 
     private void Awake()
     {
         _sudoUnknownCanvas = GetComponentInParent<Canvas>();
+        _id = GetComponentInParent<SudoCube>().ID;        
     }
 
     public void OnPointerClick(PointerEventData eventData)
@@ -35,12 +37,13 @@ public class unkButton : MonoBehaviour, IPointerClickHandler
 
     private void middleClick()
     {
-        print($"middle-click {_buttonNo}.");
+        print($"middle-click {_id}-{_buttonNo}.");
     }
 
     private void leftClick()
     {
         //  check if _buttoNo is the SudoCube's given
+        print($"left-click {_id}-{_buttonNo}.");
         SudoCube parent = GetComponentInParent<SudoCube>();
         if (_buttonNo == Mathf.Abs( parent.SudoCubeValue))
         {
@@ -59,7 +62,7 @@ public class unkButton : MonoBehaviour, IPointerClickHandler
 
     private void rightClick()
     {
-        print($"right-click {_buttonNo}.");
+        print($"right-click {_id}-{_buttonNo}.");
     }
     //*/
 }
