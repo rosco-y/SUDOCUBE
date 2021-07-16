@@ -17,6 +17,7 @@ public class SudoGuessCanvasScript : MonoBehaviour
         set
         {
             _errorGuess.text = value.ToString();
+            _errorGuess.gameObject.SetActive(true);
         }
     }
 
@@ -25,6 +26,7 @@ public class SudoGuessCanvasScript : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _sudoGuessCanvas.gameObject.SetActive(false);
+            _errorGuess.gameObject.SetActive(false);
             _sudoUnknownCanvas.gameObject.SetActive(true);
         }
     }

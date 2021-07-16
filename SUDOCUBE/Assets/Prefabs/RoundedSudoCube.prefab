@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 552675003569914615}
   m_Layer: 0
   m_Name: unk4
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -286,7 +286,7 @@ GameObject:
   - component: {fileID: 5199855497119639589}
   m_Layer: 0
   m_Name: unk2
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -423,7 +423,7 @@ GameObject:
   - component: {fileID: 8350941727427711320}
   m_Layer: 0
   m_Name: unk7
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -560,7 +560,7 @@ GameObject:
   - component: {fileID: 854247540654866079}
   m_Layer: 0
   m_Name: unk1
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -965,7 +965,7 @@ GameObject:
   - component: {fileID: 1049418242606357545}
   m_Layer: 0
   m_Name: unk8
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1240,7 +1240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1873964990778166827
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1248,13 +1248,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3755677778949180450}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 2.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1592030546277739525}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 4332037534225781573}
   m_Layer: 0
   m_Name: unk3
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1745,7 +1745,7 @@ GameObject:
   - component: {fileID: 7146788847900784490}
   m_Layer: 0
   m_Name: unk6
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2018,7 +2018,7 @@ GameObject:
   - component: {fileID: 1833253442410208537}
   m_Layer: 0
   m_Name: unk5
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2289,7 +2289,7 @@ GameObject:
   - component: {fileID: 1765916786129330328}
   m_Layer: 0
   m_Name: unk9
-  m_TagString: Untagged
+  m_TagString: unkButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

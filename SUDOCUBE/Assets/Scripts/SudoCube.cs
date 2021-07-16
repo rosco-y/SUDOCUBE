@@ -48,7 +48,8 @@ public class SudoCube : MonoBehaviour, IPointerClickHandler
 
     private void leftClick()
     {
-        print($"left-click {_sudoButtonValue}.");
+        int id = GetComponentInParent<SudoCube>().ID;
+        print($"left-click {_sudoButtonValue}.-{id}.");
     }
 
     private void rightClick()
