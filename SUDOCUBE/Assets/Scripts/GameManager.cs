@@ -112,15 +112,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            print($"Update Count:");
-            _clone.SudoCubeValue += 1;
-            _clone.SudoCubeValue %= 10;
-        }
-    }
     private void instantiateAndPlaceSudoCubeObjects()
     {
         GameObject SudoCubeArray = new GameObject("SudoCubeArray");
