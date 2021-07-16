@@ -170,6 +170,7 @@ public class GameManager : MonoBehaviour
         int numSpaces = layerRowCol / 3;
         return (float)numSpaces * (_size / 3) + offset;
     }
+
     private void makeHoles(float difficulty = 50)
     {
 

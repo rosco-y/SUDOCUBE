@@ -137,7 +137,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &69234443508789716
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,7 +163,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 69234443508789716}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5118984638421569968}
@@ -409,7 +408,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &1194841622062264329
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,7 +545,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &1976847489355104160
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +682,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &2261742184555799428
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1087,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &3608749529137522383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1635,7 +1630,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &4705149944700834474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,19 +1656,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4705149944700834474}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1.1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.38}
   m_LocalScale: {x: 1, y: 1.0000001, z: 1.0000001}
   m_Children:
   - {fileID: 8212968486526292242}
   m_Father: {fileID: 6335359483494975551}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -25.000004}
   m_SizeDelta: {x: 50, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!223 &1641034469154792087
 Canvas:
   m_ObjectHideFlags: 0
@@ -1873,7 +1867,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &5626024379093076815
 GameObject:
   m_ObjectHideFlags: 0
@@ -2147,7 +2140,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &5911514080886119112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2419,7 +2411,6 @@ MonoBehaviour:
   _errorGuessCanvas: {fileID: 2407787799041238843}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvasScript: {fileID: 4617491000607649949}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &6093605658943725522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2619,7 +2610,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: a7172d750380bda46beb0b471456f723, type: 3}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2656,6 +2647,7 @@ MonoBehaviour:
   _sudoValueCanvas: {fileID: 1641034469154792087}
   _unkCanvas: {fileID: 3298091963893625555}
   _sudoValueText: {fileID: 49410974561985027}
+  Marks: 
 --- !u!1 &7467278374207193576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,7 +2667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1592030546277739525
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2772,7 +2764,6 @@ MonoBehaviour:
   _errorGuess: {fileID: 5191197288341500369}
   _sudoUnknownCanvas: {fileID: 3298091963893625555}
   _sudoGuessCanvas: {fileID: 2407787799041238843}
-  _sudoValueText: {fileID: 49410974561985027}
 --- !u!1 &7578748574484229300
 GameObject:
   m_ObjectHideFlags: 0
@@ -3068,8 +3059,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9042177336280811784}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: 1.14}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -1.141}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 610324888897749805}
@@ -3083,7 +3074,7 @@ RectTransform:
   - {fileID: 3050187316329438984}
   m_Father: {fileID: 6335359483494975551}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0.07}

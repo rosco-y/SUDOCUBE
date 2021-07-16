@@ -91,10 +91,15 @@ public class SudoCube : MonoBehaviour, IPointerClickHandler
         }
     }
 
-
+    //private void Update()
+    //{
+    //    transform.LookAt(_mainCamera.transform);
+    //    this.transform.rotation = _mainCamera.transform.rotation;
+    //}
     private void Update()
-    {        
+    {
         transform.LookAt(_mainCamera.transform);
+        transform.rotation = _mainCamera.transform.rotation;
     }
 
     public cCoords COORDS
