@@ -62,7 +62,8 @@ public class ShowHideLayer : MonoBehaviour
     {
         if (_centerTargetPosition != null && CenterLocations[layer].isSet)
         {
-            _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;
+            if (g.Instance.CurrentLayer == 0)
+                _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;
         }
 
     }
@@ -280,7 +281,10 @@ public class ShowHideLayer : MonoBehaviour
                 distanceAdjustment = -distanceAdjustment;
 
             _centerTargetPosition = centerPosition();
-            _centerTargetPosition.transform.position = V3CameraPositionAdjustment(distanceAdjustment);
+            if (g.Instance.CurrentLayer == 0)
+                _centerTargetPosition.transform.position = g.Instance.InitialCameraPosition;
+            else
+                _centerTargetPosition.transform.position = V3CameraPositionAdjustment(distanceAdjustment);
             _adjustCamera = true;
         }
 
@@ -289,7 +293,7 @@ public class ShowHideLayer : MonoBehaviour
             //_invertDistanceAdjustment = true; // 1 can only be showing a layer.
             //_beginCameraDistance = getDistanceFromCenterToActiveLayer();
             //_fshowThisLayer = true;
-            showThisLayer(1);
+            showThisLayer(0);
         }
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
@@ -383,8 +387,8 @@ public class ShowHideLayer : MonoBehaviour
         // layer visibility adjustments are made!
         // (i.e., in reponse to Input.GetKeyDown() tests.)
         adjustCameraDistance(_invertDistanceAdjustment, _fshowThisLayer);
-    }
 
+    }
     private void adjustCameraDistance(bool showLayer, bool fshowThisLayer)
     {
         if (fshowThisLayer)
@@ -445,7 +449,7 @@ public class ShowHideLayer : MonoBehaviour
 
     private void showThisLayer(int layer)
     {
-        _invertDistanceAdjustment = g.Instance.CurrentLayer < layer;
+        _invertDistanceAdjustment = g.Instance.CurrentLayer < (layer - 1);
         _beginCameraDistance = getDistanceFromCenterToActiveLayer();
         layer--;
 

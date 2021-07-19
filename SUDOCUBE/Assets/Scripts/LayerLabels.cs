@@ -64,30 +64,22 @@ public class LayerLabels : MonoBehaviour
     public void setLayerLabels()
     {
         int i = 0;
-        try
+        for (i = 0; i < g.PSIZE; i++)
         {
-            for (i = 0; i < g.PSIZE; i++)
+            string s = (i + 1).ToString();
+            if (i == g.Instance.HomeLayer)
             {
-                string s = (i + 1).ToString();
-                if (i == g.Instance.HomeLayer)
+                s += "*";
+            }
+            if (i >= CurrentLayer || i == g.Instance.HomeLayer)
+            {
+                if (i == CurrentLayer || i == g.Instance.HomeLayer)
                 {
-                    s += "*";
-                }
-                if (i >= CurrentLayer || i == g.Instance.HomeLayer)
-                {
-                    if (i == CurrentLayer || i == g.Instance.HomeLayer)
-                    {
 
-                        if (i == g.Instance.CurrentLayer)
-                        {
-                            Labels[i].text = $"[{s}]";
-                            Labels[i].color = _highLight; // only highlight current layer
-                        }
-                        else
-                        {
-                            Labels[i].text = $" {s}";
-                            Labels[i].color = _white;
-                        }
+                    if (i == g.Instance.CurrentLayer)
+                    {
+                        Labels[i].text = $"[{s}]";
+                        Labels[i].color = _highLight; // only highlight current layer
                     }
                     else
                     {
@@ -96,13 +88,13 @@ public class LayerLabels : MonoBehaviour
                     }
                 }
                 else
-                    Labels[i].text = String.Empty;
+                {
+                    Labels[i].text = $" {s}";
+                    Labels[i].color = _white;
+                }
             }
-        }
-        catch (Exception x)
-        {
-
-            throw new Exception($"setLayerLabels index out of bounds: {i}");
+            else
+                Labels[i].text = String.Empty;
         }
     }
 

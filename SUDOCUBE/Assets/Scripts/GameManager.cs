@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         // setup defaults and current environment
-        g.Instance.SudoCenterPosition = _sudoCenter.transform.position;
+        g.Instance.InitialCameraPosition = Camera.main.transform.position;
         g.Instance.CurrentSide = new cCur(5, 6);
         g.SaveFile = Application.persistentDataPath + "/SAVEFILE.BIN";
         g.PUZZLEPATH = @"C:\PROJECTS\SUDOPROJECTS\DATA\PUZZLES\";

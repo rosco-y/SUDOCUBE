@@ -24,7 +24,7 @@ public class g : Singleton<g>
     public static string SaveFile { get; internal set; }
     public int NumErrors { get; internal set; }
     public static int PuzzleNumber { get; internal set; }
-    public Vector3 SudoCenterPosition;
+//    public Vector3 InitialSudoCenterPosition;
 
     #region SudoCube LAYERS
     public SudoCube[][][] SudoCubes;
@@ -52,6 +52,9 @@ public class g : Singleton<g>
                 _currentLayer = value;
         }
     }
+
+    public Vector3 InitialCameraPosition { get; internal set; }
+
 
 
 
