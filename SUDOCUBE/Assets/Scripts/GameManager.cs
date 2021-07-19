@@ -10,11 +10,13 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] SudoCube _SudoCube; // my cube prefab
     [SerializeField] TMP_Text _statusBar;
-    //[SerializeField] int _numCubes;
+    [SerializeField] GameObject _sudoCenter;
     SudoCube _clone;
 
     private void Awake()
     {
+        // setup defaults and current environment
+        g.Instance.SudoCenterPosition = _sudoCenter.transform.position;
         g.Instance.CurrentSide = new cCur(5, 6);
         g.SaveFile = Application.persistentDataPath + "/SAVEFILE.BIN";
         g.PUZZLEPATH = @"C:\PROJECTS\SUDOPROJECTS\DATA\PUZZLES\";

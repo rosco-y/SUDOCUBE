@@ -60,18 +60,9 @@ public class ShowHideLayer : MonoBehaviour
 
     void restoreCenterPosition(int layer)
     {
-        try
+        if (_centerTargetPosition != null && CenterLocations[layer].isSet)
         {
-            if (_centerTargetPosition != null && CenterLocations[layer].isSet)
-            {
-                _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;
-            }
-
-        }
-        catch (Exception x)
-        {
-
-            throw x;
+            _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;
         }
 
     }
@@ -366,7 +357,6 @@ public class ShowHideLayer : MonoBehaviour
                 g.Instance.HomeLayer = -1;
             else
                 g.Instance.HomeLayer = g.Instance.CurrentLayer;
-
             _layerLabels.setLayerLabels();
         }
         // '0' = GOTO Home Layer
@@ -542,7 +532,6 @@ public class ShowHideLayer : MonoBehaviour
     /// </summary>
     Vector3 V3CameraPositionAdjustment(float distanceAdjustment)
     {
-
         // get axis to adjust camera along
         string cameraAdjustmentAxis = g.Instance.CurrentSide.CameraAdjustmentAxis();
         //print($"cameraAdjustmentAxis = {cameraAdjustmentAxis}");
@@ -550,6 +539,7 @@ public class ShowHideLayer : MonoBehaviour
 
         bool negative = false;
         char axis;
+
         if (cameraAdjustmentAxis.StartsWith("-"))
         {
             negative = true;

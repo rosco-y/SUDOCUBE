@@ -24,7 +24,7 @@ public class g : Singleton<g>
     public static string SaveFile { get; internal set; }
     public int NumErrors { get; internal set; }
     public static int PuzzleNumber { get; internal set; }
-
+    public Vector3 SudoCenterPosition;
 
     #region SudoCube LAYERS
     public SudoCube[][][] SudoCubes;
