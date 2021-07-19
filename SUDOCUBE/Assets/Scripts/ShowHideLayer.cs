@@ -46,10 +46,15 @@ public class ShowHideLayer : MonoBehaviour
     {
         try
         {
+            if (g.Instance.CurrentLayer == 0)
+                Camera.main.transform.position = g.Instance.InitialCameraPosition;
             if (layer < 0 || layer > g.PSIZE - 1)
                 return;
-            CenterLocations[layer].centerLocation = _sudoCenter.transform.position;
-            CenterLocations[layer].isSet = true;
+            if (!CenterLocations[layer].isSet)
+            {
+                CenterLocations[layer].centerLocation = _sudoCenter.transform.position;
+                CenterLocations[layer].isSet = true;
+            }
         }
         catch (Exception x)
         {
@@ -62,8 +67,7 @@ public class ShowHideLayer : MonoBehaviour
     {
         if (_centerTargetPosition != null && CenterLocations[layer].isSet)
         {
-            if (g.Instance.CurrentLayer == 0)
-                _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;
+            _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;
         }
 
     }
