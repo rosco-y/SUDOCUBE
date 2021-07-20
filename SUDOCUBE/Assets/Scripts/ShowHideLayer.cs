@@ -561,15 +561,6 @@ public class ShowHideLayer : MonoBehaviour
             axis = cameraAdjustmentAxis[0];
 
 
-        ///****************************************************************
-        // * We are only moving on the z axis, so holding x and y constant.
-        // ****************************************************************/
-        //v3cameraPos.x = CAMERAX;
-        //v3cameraPos.y = CAMERAY;
-        //if (negative)
-        //    v3cameraPos.z -= distanceAdjustment;
-        //else
-        //    v3cameraPos.z += distanceAdjustment;
 
         switch (axis)
         {
