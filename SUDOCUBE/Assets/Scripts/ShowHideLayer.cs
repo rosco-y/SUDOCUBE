@@ -21,6 +21,9 @@ public class ShowHideLayer : MonoBehaviour
     bool[] HiddenLayers = new bool[g.PSIZE];
     [SerializeField] float _centerAdjustSpeed = 9;
     [SerializeField] GameObject _sudoCenter;
+    [SerializeField] GameObject _stableSphere; // doesn't move, just sits on place.
+    const float CAMERAX = 5.6F;
+    const float CAMERAY = 5.8F;
     //[SerializeField] LayerLabels lyrLabels;
     public struct stCenterLocations
     {
@@ -67,7 +70,7 @@ public class ShowHideLayer : MonoBehaviour
     {
         if (_centerTargetPosition != null && CenterLocations[layer].isSet)
         {
-            _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;
+            _centerTargetPosition.transform.position = CenterLocations[layer].centerLocation;            
         }
 
     }
@@ -247,6 +250,7 @@ public class ShowHideLayer : MonoBehaviour
     float _beginCameraDistance;
     bool _fshowThisLayer = false;
     bool _invertDistanceAdjustment = false;
+
     void Update()
     {
         bool hideLayer = false;
@@ -297,7 +301,7 @@ public class ShowHideLayer : MonoBehaviour
             //_invertDistanceAdjustment = true; // 1 can only be showing a layer.
             //_beginCameraDistance = getDistanceFromCenterToActiveLayer();
             //_fshowThisLayer = true;
-            showThisLayer(0);
+            showThisLayer(1);
         }
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
@@ -556,6 +560,17 @@ public class ShowHideLayer : MonoBehaviour
         else
             axis = cameraAdjustmentAxis[0];
 
+
+        ///****************************************************************
+        // * We are only moving on the z axis, so holding x and y constant.
+        // ****************************************************************/
+        //v3cameraPos.x = CAMERAX;
+        //v3cameraPos.y = CAMERAY;
+        //if (negative)
+        //    v3cameraPos.z -= distanceAdjustment;
+        //else
+        //    v3cameraPos.z += distanceAdjustment;
+
         switch (axis)
         {
             case 'X':
@@ -586,8 +601,8 @@ public class ShowHideLayer : MonoBehaviour
         if (_adjustCamera && _centerTargetPosition != null)
         {
             // ensure that sudoCenter keeps it's center position.
-            if (g.Instance.CurrentLayer == 0)
-                _centerTargetPosition.transform.position = new Vector3(0.42f, 0.37f, 0.43f);
+            //if (g.Instance.CurrentLayer == 0)
+            //    _centerTargetPosition.transform.position = new Vector3(0.42f, 0.37f, 0.43f);
 
             _sudoCenter.transform.position = Vector3.Lerp(_sudoCenter.transform.position, _centerTargetPosition.transform.position, Time.deltaTime * _centerAdjustSpeed);
             _sudoCenter.transform.parent = _sudoCenter.transform;
