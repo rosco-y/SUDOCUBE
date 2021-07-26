@@ -17,12 +17,11 @@ public enum eLayer
 /// </summary>
 public class ShowHideLayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     bool[] HiddenLayers = new bool[g.PSIZE];
     [SerializeField] float _centerAdjustSpeed = 9;
     [SerializeField] GameObject _sudoCenter;
     [SerializeField] GameObject _stableSphere; // doesn't move, just sits on place.
-    //[SerializeField] LayerLabels lyrLabels;
     public struct stCenterLocations
     {
         public Vector3 centerLocation { get; set; }
@@ -32,10 +31,7 @@ public class ShowHideLayer : MonoBehaviour
     GameObject _centerPositionGameObject;
     [SerializeField] LayerLabels _layerLabels;
 
-    // Update is called once per frame
-    private void Awake()
-    {
-    }
+    // Start is called before the first frame update
     private void Start()
     {
         _centerPositionGameObject = new GameObject(); // one time instead of repeatedly
@@ -105,8 +101,12 @@ public class ShowHideLayer : MonoBehaviour
 
     float getLayerDistance()
     {
+        // layerType 'Front2Back, 'Top2Bottom' or 'Left2Right'
         eLayer layerType = getCurrentLayerType();
+
+        // create dictionary of layers "layer" variable
         Dictionary<int, List<SudoCube>> layer;
+
         layer = getLayer(layerType);
         int startIndex = normalizedLayerNo(0);
         bool ascending = false;
@@ -296,18 +296,11 @@ public class ShowHideLayer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Keypad1))
         {
-            //_invertDistanceAdjustment = true; // 1 can only be showing a layer.
-            //_beginCameraDistance = getDistanceFromCenterToActiveLayer();
-            //_fshowThisLayer = true;
             showThisLayer(1);
         }
         if (Input.GetKeyDown(KeyCode.Keypad2))
         {
-            // CurrentLayer is zero-based, so keep that in mind when setting "showLayer"
-            //_invertDistanceAdjustment = g.Instance.CurrentLayer < 1;
-            //_beginCameraDistance = getDistanceFromCenterToActiveLayer();
             showThisLayer(2);
-            //_fshowThisLayer = true;
         }
         if (Input.GetKeyDown(KeyCode.Keypad3))
         {

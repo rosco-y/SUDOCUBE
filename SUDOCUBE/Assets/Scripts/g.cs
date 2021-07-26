@@ -136,7 +136,7 @@ public class g : Singleton<g>
             foreach (var CELL in LAYERS[layer])
             {
                 if (CELL.name.EndsWith("44"))
-                    CELL.name = "Z";
+                    CELL.name = "Z" + CELL.COORDS;
             }
         }
         LAYERS = LEFT2RIGHT_LAYERS;
@@ -145,7 +145,7 @@ public class g : Singleton<g>
             foreach (var CELL in LAYERS[layer])
             {
                 if (CELL.name.EndsWith("44"))
-                    CELL.name = "X";
+                    CELL.name = "X" + CELL.COORDS;
             }
         }
     }
