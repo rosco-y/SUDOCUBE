@@ -22,8 +22,6 @@ public class ShowHideLayer : MonoBehaviour
     [SerializeField] float _centerAdjustSpeed = 9;
     [SerializeField] GameObject _sudoCenter;
     [SerializeField] GameObject _stableSphere; // doesn't move, just sits on place.
-    const float CAMERAX = 5.6F;
-    const float CAMERAY = 5.8F;
     //[SerializeField] LayerLabels lyrLabels;
     public struct stCenterLocations
     {
